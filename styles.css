@@ -1,0 +1,170 @@
+#bttn {
+    font-family: 'Playfair Display', serif;
+    color: black;
+    margin: 2% 10% 10% 35%;
+}
+
+
+.profilepic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  padding-top: 60px;
+  padding-bottom: 10px;
+
+}
+
+
+.carousel-item {
+  height: 30%;
+  width: 60%;
+}
+
+.edu {
+  color: black;
+  padding: 10px 70px 10px 30px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  padding-bottom: 20px;
+}
+
+.career {
+  font-family: 'Playfair Display', serif;
+  color: black;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.core-1 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 2px;
+  font-weight: 800;
+  text-align: center;
+  border-style: solid;
+  border-color: white;
+  border-width: medium;
+  margin: 15% 30% 10% 30%;
+  background-color: #ffaaa6;
+  padding: 2% ;
+  }
+
+  .hi{
+    font-weight: 800;
+    color: #521168;
+  }
+.pi
+{
+  background-image: radial-gradient(#ffdfdf, #fbc1bc);
+}
+
+.anchor:hover{
+  color: #d45079;
+  text-decoration:none;
+}
+
+.home {
+  background-image: url("image/Arduino-Home-Automation-1.JPG");
+  background-size: cover;
+  font-family: 'Playfair Display', serif;
+  height: 300px;
+  width: 500px;
+  margin: auto 40% auto 25%;
+  border: 3px solid;
+  letter-spacing: 2px;
+
+}
+
+.nursery {
+  background-image: url("image/download-iot.JPG");
+  background-size: cover;
+  font-family: 'Playfair Display', serif;
+  height: 300px;
+  width: 500px;
+  margin: auto 50% auto 50%;
+  border: 3px solid;
+  letter-spacing: 2px;
+}
+
+.project {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  margin: auto;
+  padding-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.trainings {
+  font-family: 'Playfair Display', serif;
+  color: black;
+  letter-spacing: 2px;
+  text-align: left;
+  display: table;
+  margin: 0 auto;
+}
+
+.train {
+  font-family: 'Playfair Display', serif;
+  color: black;
+  letter-spacing: 2px;
+  text-align: center;
+  display: table;
+  margin: 0 auto;
+}
+
+.line {
+  border-color: black;
+  border-width: 3px;
+  border-style: dotted none none;
+  display: block;
+  width: 22%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.certificate {
+  padding: 2% 10% 2% 18%;
+}
+
+.info {
+  color: white;
+}
+
+.heading{
+  color:black ;
+  font-weight: bolder;
+  font-family: 'Playfair Display', serif;
+  padding: 23% 10% 70% 30%;
+}
+.carousel {
+  width: 640px;
+  height: 360px;
+  margin: auto;
+}
+.image{
+  margin:1% 30% 1% 30%;
+  height: 300px;
+  width: 500px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  color: black;
+  text-align: center;
+}
+
+p {
+  font-family: 'Playfair Display', serif;
+  color: black;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.body {
+  background-image: url("image/60320387-abstract-colorful-watercolor-background-soft-pastel-wash.JPG");
+  background-size: cover;
+}

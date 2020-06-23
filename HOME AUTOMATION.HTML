@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+
+<body>
+  <h2 class="project">ABSTARCT</h2>
+  <p>Home automation is building automation for home or smart home.
+    A smart home controls many aspects of household appliances such as lighting, temperature control, entertainment systems etc. It is a way to reduce human efforts for maintaining an ambient state of tension free living where the appliances decide
+    how to maintain their surroundings. However, the appliance themselves don’t decide what their output should be.
+    This is done by the sensors and the controllers, which manipulate the data received from the sensors and a
+    set of instructions fed into the controller decide what should happen.
+    In an automated home it is also necessary to have some level of human interference so as to satisfy the needs of that person.
+    Home automation aims at making life easier for us by taking care of our surroundings and helping us put more efforts
+    into our work by saving time and being more efficient.</p>
+  <hr class="line">
+  <h2 class="project">TABLE OF CONTENT</h2>
+  <ul class="trainings">
+    <li>INTRODUCTION</li>
+    <li>DESIGN</li>
+    <li>IMPLEMENTATION</li>
+    <li>TESTING, ANALYSIS AND RESULT</li>
+    <li>CONCLUSION</li>
+    <li>FUTURE ENHANCEMENT</li>
+    <li>REFERENCES</li>
+    <li>CODE</li>
+  </ul>
+  <hr class="line"/>
+  <h2 class="project">INTRODUCTION</h2>
+  <p>
+    Generally, the line follower robot is one of the self-
+    operating mobile machines that follows a line drawn on the
+    floor. The path can be a visible black line on a white surface
+    (reverse).The basic operations of the line follower are as
+    follows:<br />
+    • Capturing the line position with optical sensors
+    mounted at the front end of the robot. Most are using
+    several numbers of photo-reflectors. Therefore, the
+    line sensing process requires high resolution and
+    high robustness.<br />
+    Generally, all the work is taken care of by the humans when comes to their homes, offices etc. Some of these works are not so complex and can be taken care by using machines. These lesser works include maintaining the light intensity, room
+    temperature, access, security and so on. Earlier when a person had to come home and set up the required appliances. But with home automation he can set up these appliances sitting far away just with the help of digital buttons on his/her
+    smartphone and a good WiFi connection.
+    These works are taken care by automating the surroundings.
+    Automation starts with gathering the required information from the surroundings such as intensity of light outside, temperature, individual access etc. by the use of sensors. These sensors are of various types such as photo sensor, temperature
+    and humidity sensor, PIR, touch sensor, finger-print sensor and so on. The data collected by these sensors is sent to the controller.
+    This controller contains set of instructions to gather this data, manipulate it and convert it into applicable data.
+    This data is the used by this controller to control the appliances such as lights, ACs, fans, door, windows, alarms etc.
+    Home automation or smart home has a large application in various fields such as it can be used for safety purposes,
+    in medical world, for security and many more things.
+    Home automation is an application of IOT which is taking up a lot of work in various fields such as security, safety,
+    commercial enterprises, etc.
+    Its scope can be estimated from lifting a spoon to wireless communication in space satellites(still under work).</p>
+  <hr class="line"/>
+  <h2 class="project">DESIGN</h2>
+  <p class="trainings">The components used to build this line follower are as follows: </p>
+  <table class="trainings">
+    <ol >
+      <tr>
+        <td>
+          <li><img src="homeimages\download -jumper.JPG" alt="wire" />Connecting Wires (Jumper Wires)</li>
+        </td>
+        <td>
+          <li> <img src="homeimages\images-power.JPG" alt="power" />Power supply</li>
+        </td>
+        <td>
+          <li><img src="homeimages\download-node.JPG" alt="MCU" />NodeMCU </li>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <li><img src="homeimages\download-photosensor.JPG" alt="photosensor" />Photosensor</li>
+        </td>
+        <td>
+          <li><img src="homeimages\download-thermal.JPG" alt="thermal" />Thermal sensor(DHT-11)</li>
+        </td>
+        <td>
+          <li><img src="homeimages\download-LED.JPG" alt="led" />LED</li>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <li><img src="homeimages\download-servo.JPG" alt="servo" />Servo motors</li>
+        </td>
+        <td>
+          <li><img src="homeimages\download-bread.JPG" alt="breadboard" />Bread board</li>
+        </td>
+        <td>
+          <li><img src="homeimages\rsz_1rsz_1akrales_190913_3628_0277.JPG" alt="phone" />Smartphone</li>
+        </td>
+      </tr>
+    </ol>
+  </table>
+  <p class="project">
+    Photosensor: Photosensor is used in our project to get the light intensity.
+    It is placed on the outside of the house to get the intensity of light in the surrounding.
+    Thermal sensor( DHT-11): Thermal sensor is used to get the temperature and humidity of the surrounding.
+    It is placed on the outside to gather information on the temperature and humidity for the appliances.
+    Controller (NodeMCU): NodeMCU is the main controller in the project. The data from the sensors (photosensor and DHT-11) will be given to Arduino and it gives corresponding signals to the LED and servo motors.
+    LED: The LED in the project is a representation of the LED bulbs used in homes. The LED is controlled by the signals sent by the controller depending on the data sent by the photosensor.
+    Servo Motor: The servo motor is used to control the window and curtain. The servo motor is controlled by the signals sent by the controller depending on the data sent by the photosensor and DHT-11 sensor or also by the smartphone.
+    Smartphone: Smartphone is used to control the state of the appliances as if they are to be kept on or off so that the energy is not wasted. It is also used to control the settings of the appliances according to the users needs.
+    Now, how it works?
+    When the switches are set to ‘on’ state on the smartphone, the sensors start to gather data and the controller uses this data to set the appliances to their respective states.
+    Let’s take when the switch for window is set on, both the sensors start reading data and when the required conditions in the instructions in controller are met the window turns to a particular angle. Now if the user wants to set it to some other
+    angle according to his/her need, the slider can be used to set the angle and stop the data from sensors to control it. Since the data from sensor is not being used there is no use to read the data from sensors. Hence, the sensors don’t read any
+    data for time being from the surroundings. Same thing works for the curtain.
+    Now, when switch for light is turned on by the smartphone.
+    The controller starts to read data from the photosensor and this data is manipulated to set the intensity of bulb inside.</p>
+  <hr class="line"/>
+  <h2 class="project">IMPLEMENTATION</h2>
+  <p>To run this project, we have used Arduino IDE which is used to write the code and upload to the physical board.
+    The Arduino language is merely a set of C/C++ functions that can be called from your code.
+    Your sketch undergoes minor changes (e.g. automatic generation of function prototypes) and then is passed directly to a C/C++compiler.</p><br>
+    &nbsp if(buttonstate==1)<br>
+    &nbsp {<br />
+    &nbsp int data=analogRead(A0);<br />
+    &nbsp Serial.println(data);<br />
+    &nbsp delay(1000);<br />
+    &nbsp int temp = dht.readTemperature();<br />
+    &nbsp int humidity = dht.readHumidity();<br />
+    &nbsp Serial.print("Temperature = ");<br />
+    &nbsp Serial.println(temp);<br />
+    &nbsp Serial.print("Humidity = ");<br />
+    &nbsp Serial.println(humidity);<br />
+    &nbsp delay(1000);<br />
+    &nbsp <br />
+    &nbsp if(k=0)<br />
+    &nbsp {<br />
+    &nbsp //if(data < 34 || data > 900)<br />
+    &nbsp   if((data < 34 || data > 900) && (temp > 32 && humidity > 60)))<br />
+      &nbsp   {<br />
+      &nbsp   servo1.write(0);<br />
+      &nbsp   }<br />
+      &nbsp   //else if(data>=34 && data
+      &nbsp   <=900)<br />
+      &nbsp   else if((data>=34&&data
+      &nbsp   <=900) && (temp <= 32 && humidity <= 60))<br />
+      &nbsp   {<br />
+      &nbsp   servo1.write(150);<br />
+      &nbsp   k++;<br />
+      &nbsp   }<br />
+      &nbsp   }<br />
+      &nbsp   else if(k=1)<br />
+      &nbsp   {<br />
+      &nbsp   //if(data < 34 || data > 900)<br />
+      &nbsp     if((data < 34 || data > 900) && (temp > 32 && humidity > 60))<br />
+      &nbsp       {<br />
+      &nbsp       servo1.write(0);<br />
+      &nbsp       k--;<br />
+      &nbsp       }<br />
+      &nbsp       //else if(data >= 34 && data
+      &nbsp       <=900)<br />
+      &nbsp       else if((data => 34 && data
+      &nbsp       <=900) && (temp <= 32 && humidity <= 60))<br />
+      &nbsp       {<br />
+      &nbsp       servo1.write(150);<br />
+      &nbsp       }<br />
+      &nbsp       }<br />
+      &nbsp       }<br />
+      &nbsp       else if(buttonstate==0)<br />
+      &nbsp       {<br />
+      &nbsp       servo1.write(0);<br />
+      &nbsp       k=0;<br />
+      &nbsp       }<br />
+            <p class="project">
+            The above code is used to just control the window by switching on the button on smartphone.
+            The variable ‘buttonstate’ is used to store the state of the button and then data is read by both the sensors.
+            This data is sent to NodeMCU which then uses the given conditions to operate the window.
+            The commented lines of code can be used as test cases to check the code.</p>
+  <hr class="line"/>
+  <h2 class="project">TESTING, ANALYSIS AND RESULT</h2>
+  <p>It can be seen that by switching on the button for a specific target appliance(let’s take light) the data from sensor
+    takes care of the intensity that has to be maintained inside the room.
+    It collects the intensity outside and sends it to the controller.
+    The instruction in the controller converts this data into required input for the LED and thus the intensity of light is maintained in connection with the intensity outside.
+    From the test cases we can note that there is reduction of human intervention as the settings are taken care
+    by the sensors and controller. The person has to just switch it on and leave rest of the settings to the controller.
+    Thus human effort is reduced and there is an ease of living where the person doesn’t have to worry about anything.</p>
+  <hr class="line"/>
+  <h2 class="project">CONCLUSION</h2>
+  <p>Thus home automation is a practical approach of IOT which can be implemented at a large scale.
+    Its purpose need not be limited to the field of domestic use.
+    The power of home automation can be seen on an enlarged basis by implementing smart offices and other such projects.
+    The power of internet can be easily seen in this manner to control the lifestyle.
+    It enhances interdisciplinary approach to mechanical, electronic, electrical and programming skills. The application of the project is range from the individual domestic appliance automation to control aspect of large industry to wireless
+    communication in space vehicles. Human are intelligent natural machine but on contrary has serious limitation of efficiency and reliability. Robots are made to replace dependency of human force partially. The project is somehow designed to
+    perform the similar task.</p>
+  <hr class="line"/>
+  <h2 class="project">FUTURE ENHANCEMENT</h2>
+  <p>This project is a small representation of the power of IOT.
+    Internet today has become a living source for life as most of the work is done using it.
+    Internet is everywhere controlling our day-to-day lives. So why not put it to our complete use.
+    This project shows how it can be used in hospitals to maintain uniform temperature according to the needs of a patient maintaining the state of consistency may reduce the need for interference and the professionals can decide how to set it up.
+    This can be used for home security, prison security, offices etc. However, we are advancing in the field of making a great use of internet but still a far distance from it’s true power. This can make our world a completely different place,
+    increasing the efficiency and saving time.
+    Future holds great scope for home automation which can also depend on the meaning of home in future but we can
+    hopefully say that one day we can make the great use of this power to eradicate the problems we have today.</p>
+  <hr class="line"/>
+  <h2 class="project">REFERENCES</h2>
+  <ul class="trainings">
+    <li>Servo Motors Basics, Working Principle and theory- Circuit digest (⦁ https://circuitdigest.com)</li>
+    <li>Nodemcu Introduction to Nodemcu (⦁ https://www.electronicwings.com)</li>
+    <li>Blynk IOT platform(https://blynk.io)</li>
+  </ul>
+  <hr class="line"/>
+  <h2 class="trainings">CODE</h2>
+
+    &nbsp #include < DHT.h > <br />
+    &nbsp   #include < Servo.h > <br />
+      &nbsp   #define BLYNK_PRINT Serial<br />
+      &nbsp   #include < ESP8266WiFi.h><br />
+        &nbsp   #include < BlynkSimpleEsp8266.h><br />
+        &nbsp     char auth[] = "e989500d9d1740d6a296703e5be0367c";<br />
+          &nbsp   char ssid[] = "alset";<br />
+          &nbsp   char pass[] = "itispassword";<br />
+          &nbsp   Servo servo1,servo2;<br />
+          &nbsp   DHT dht(D4,DHT11);<br />
+          &nbsp   int k=0,j=0,i=0,buttonstate,winslider,lightstate,curtainstate,curtainslider;<br />
+          &nbsp   void setup()<br />
+          &nbsp   {<br />
+          &nbsp   Serial.begin(115200);<br />
+          &nbsp   delay(1000);<br />
+          &nbsp   pinMode(D5,OUTPUT);<br />
+          &nbsp   Blynk.begin(auth, ssid, pass);<br />
+          &nbsp   dht.begin();<br />
+            &nbsp servo1.attach(D0); //D0<br />
+            &nbsp servo1.write(0);<br />
+          &nbsp   servo2.attach(D1);<br />
+          &nbsp   servo2.write(0);<br />
+          &nbsp   }<br />
+          &nbsp   void loop()<br />
+          &nbsp   {<br />
+          &nbsp   Blynk.run();<br />
+          &nbsp   if(buttonstate==1)<br />
+          &nbsp   {<br />
+          &nbsp   int data=analogRead(A0);<br />
+          &nbsp   Serial.println(data);<br />
+          &nbsp   delay(1000);<br />
+          &nbsp   int temp = dht.readTemperature();<br />
+          &nbsp   int humidity = dht.readHumidity();<br />
+          &nbsp   Serial.print("Temperature = ");<br />
+          &nbsp   Serial.println(temp);<br />
+          &nbsp   Serial.print("Humidity = ");<br />
+          &nbsp   Serial.println(humidity);<br />
+          &nbsp   delay(1000);<br />
+          &nbsp   if(k=0)<br />
+          &nbsp   {<br />
+          &nbsp   //if(data< 34 || data > 900)<br />
+          &nbsp     if((data< 34 || data > 900) && (temp>32&&humidity>60)))<br />
+          &nbsp       {<br />
+          &nbsp       servo1.write(0);<br />
+          &nbsp       }<br />
+          &nbsp       //else if(data>=34&&data
+          &nbsp       <=900)<br />
+          &nbsp       else if((data>=34&&data
+          &nbsp       <=900) && (temp<=32&&humidity<=60))<br />
+          &nbsp       {<br />
+          &nbsp       servo1.write(150);<br />
+          &nbsp       k++;<br />
+          &nbsp       }<br />
+          &nbsp       }<br />
+          &nbsp       else if(k=1)<br />
+          &nbsp       {<br />
+          &nbsp       //if(data < 34 || data > 900)<br />
+          &nbsp         if((data < 34 || data > 900) && (temp>32&&humidity>60))<br />
+          &nbsp           {<br />
+          &nbsp           servo1.write(0);<br />
+          &nbsp           k--;<br />
+          &nbsp           }<br />
+          &nbsp           //else if(data>=34&&data
+          &nbsp           <=900)<br />
+          &nbsp           else if((data=>34&&data
+          &nbsp           <=900) && (temp<=32 && humidity<=60))<br />
+          &nbsp           {<br />
+          &nbsp           servo1.write(150);<br />
+          &nbsp           }<br />
+                &nbsp     }<br />
+              &nbsp       }<br />
+              &nbsp       else if(buttonstate==0)<br />
+              &nbsp       {<br />
+              &nbsp       servo1.write(0);<br />
+              &nbsp       k=0;<br />
+              &nbsp       }<br />
+              &nbsp       if(winslider>0)<br />
+              &nbsp       {<br />
+              &nbsp       servo1.write(winslider);<br />
+              &nbsp       delay(1000);<br />
+              &nbsp       }<br />
+              &nbsp       if(lightstate==1)<br />
+              &nbsp       {<br />
+              &nbsp       int data=analogRead(A0);<br />
+              &nbsp       Serial.println(data);<br />
+              &nbsp       delay(1000);<br />
+              &nbsp       int intensity=(data-29)/.45;<br />
+              &nbsp       analogWrite(D5,intensity);<br />
+              &nbsp       delay(2000);<br />
+              &nbsp       }<br />
+              &nbsp       else if(lightstate==0)<br />
+              &nbsp       {<br />
+              &nbsp       analogWrite(D5,LOW);<br />
+              &nbsp       }<br />
+              &nbsp       if(curtainstate==1)<br />
+              &nbsp       {<br />
+              &nbsp       int data=analogRead(A0);<br />
+              &nbsp       Serial.println(data);<br />
+              &nbsp       delay(1000);<br />
+              &nbsp       int temp = dht.readTemperature();<br />
+              &nbsp       int humidity = dht.readHumidity();<br />
+              &nbsp       Serial.print("Temperature = ");<br />
+              &nbsp       Serial.println(temp);<br />
+              &nbsp       Serial.print("Humidity = ");<br />
+              &nbsp       Serial.println(humidity);<br />
+              &nbsp       delay(1000);<br />
+              &nbsp       if(j=0)<br />
+              &nbsp       {<br />
+              &nbsp       //if(data < 34 ||data > 900)<br />
+              &nbsp         if((data < 34||data > 900) && (temp>32&&humidity>60))<br />
+              &nbsp           {<br />
+              &nbsp           servo2.write(0);<br />
+              &nbsp           }<br />
+              &nbsp           //else if(data>=34&&data
+              &nbsp           <=900)<br />
+              &nbsp           else if((data=>34&&data
+              &nbsp           <=900) && (temp<=32&&humidity<=60))<br />
+              &nbsp           {<br />
+              &nbsp           servo2.write(150);<br />
+              &nbsp         k++;<br />
+              &nbsp           }<br />
+              &nbsp           }<br />
+              &nbsp           else if(j=1)<br />
+              &nbsp           {<br />
+              &nbsp           //if(data < 34 || data > 900)<br />
+              &nbsp             if((data < 34 || data > 900) && (temp > 32 && humidity > 60))<br />
+              &nbsp               {<br />
+              &nbsp               servo2.write(0);<br />
+              &nbsp               k--;<br />
+              &nbsp               }<br />
+              &nbsp               //else if(data >=34&&data
+              &nbsp               <=900)<br />
+              &nbsp               else if((data=>34&&data
+              &nbsp               <=900) && (temp<=32&&humidity<=60))<br />
+              &nbsp               {<br />
+              &nbsp               servo2.write(150);<br />
+              &nbsp               }<br />
+              &nbsp               }<br />
+              &nbsp               }<br />
+              &nbsp               else if(curtainstate==0)<br />
+              &nbsp               {<br />
+              &nbsp               servo2.write(0);<br />
+                  &nbsp           j=0;<br />
+                  &nbsp           }<br />
+
+                      &nbsp       if(curtainslider>0)<br />
+                      &nbsp       {<br />
+                      &nbsp       servo2.write(curtainslider);<br />
+                      &nbsp       delay(1000);<br />
+                      &nbsp       }<br />
+                      &nbsp       }<br />
+                      &nbsp       BLYNK_WRITE(V1)<br />
+                      &nbsp       {<br />
+                      &nbsp       buttonstate=param.asInt();<br />
+                      &nbsp       Blynk.virtualWrite(V2,LOW);<br />
+                      &nbsp       winslider=0;<br />
+                      &nbsp       }<br />
+                      &nbsp       BLYNK_WRITE(V2)<br />
+                      &nbsp       {<br />
+                      &nbsp       buttonstate=0;<br />
+                      &nbsp       k=0;<br />
+                      &nbsp       Blynk.virtualWrite(V1,LOW);<br />
+                      &nbsp       winslider=param.asInt();<br />
+                      &nbsp       }<br />
+                      &nbsp       BLYNK_WRITE(V3)<br />
+                      &nbsp       {<br />
+                      &nbsp       lightstate=param.asInt();<br />
+                      &nbsp       }<br />
+                      &nbsp       BLYNK_WRITE(V4)<br />
+                      &nbsp       {<br />
+                      &nbsp       curtainstate=param.asInt();<br />
+                      &nbsp       Blynk.virtualWrite(V5,LOW);<br />
+                      &nbsp       curtainslider=0;<br />
+                      &nbsp       }<br />
+                      &nbsp       BLYNK_WRITE(V5)<br />
+                      &nbsp       {<br />
+                      &nbsp       curtainstate=0;<br />
+                      &nbsp       j=0;<br />
+                      &nbsp       Blynk.virtualWrite(V4,LOW);<br />
+                      &nbsp       curtainslider=param.asInt();<br />
+                      &nbsp       }<br />
+
+</body>
+
+</html>

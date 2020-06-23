@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Nursery Monitoring using IOT</title>
+</head>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+<body>
+  <br />
+  <h2 class="project">TABLE OF CONTENTS</h2>
+  <ol class="trainings">
+    <li>
+      Introduction
+      <ul>
+        <li>
+          Block Diagram
+        </li>
+        <li>
+          Methodology
+        </li>
+      </ul>
+    </li>
+    <li>
+      Aurduino IDE
+    </li>
+    <li>
+      DHT SENSOR
+    </li>
+    <li>
+      SOIL MOISTURE SENSOR
+    </li>
+    <li>
+      RESULT AND CONCLUSION
+    </li>
+    <li>
+      FUTURE SCOPE
+    </li>
+    <li>
+      CODE
+    </li>
+    <li>
+      REFERENCE
+    </li>
+  </ol>
+  <hr class="line" />
+  <h2 class="project">ABSTRACT</h2>
+  <p>
+    The Nursery monitoring system has recently attracted tremendous interest due to the potential application in emerging technology. More importantly, this technique is used to enhance the performance of existing techniques or to develop and design
+    new techniques for the growth of plants. The Nursery monitoring system is helpful for watering the plants and to monitor few parameters for growth of plants like temperature and humidity.
+    This system is very used in nursery farms and also in agricultural fields to monitor the changes in environment. In this system a mechanism is established to find the moisture content in the soil with the help of soil moisture sensor and
+    depending
+    upon the condition of the sensor the water is controlled,and also temperature of the surrounding is measured with the help of DHT11 sensor and depending on the conditions the fan is turned on and off.
+    This helps in providing the appropriate amount of water for plants so reduces some situations like mud cracks, water logging. This helps in irrigating the field even during night time, so does not require the farmer to switch ON the motor
+    manually,
+    they can directly control the motor even from the far places ,this reduces the risk of farmer’s and they don’t find it necessary to be their at field for switching on motor ,it can be even done from anywhere
+    This method can be used at places where their is scarcity of water ,this method reduces the water loss ,as it send the alert to the certain person so that he automatically turn off the motor using phone ,instead of coming to field and turning it
+    off manually. </p>
+
+  <hr class="line" />
+  <h2 class="project">INTRODUCTION </h2>
+  <p>
+    Agriculture is Backbone of our country which play a prominent role in our country’s economy,Since decade economy from agricultural sector has experienced a downfall due to decrease in the yield percentage and it may cost the farmers life due to
+    less returns.
+    We can notice that in our country more number of farmers are commiting suicide as they are not getting proper returns for their efforts,this will stop the others to step ahead in farming.
+    This results in hunger and poverty.
+    Inorder to have better yield and the farmers are heading towards nursery,where crops are raised till certain age by providing proper nourishment later taken to outer field for further growth. In nursery we can get perfect nourishment at younger
+    age
+    but it is important to maintain required atmosphere in nursery .
+    It requires Skilled Labour to look over the nursery,where they have to check every conditions around the plants and monitor the changes waters and act accordingly.
+    Currently, there is need for a modernized approach.in this method we make use of technology to monitor the temperature of surrounding and moisture content without involving labour.
+    This can surely help us to overcome these problems we are facing currently,It don’t require labour to monitor the changes and it is programmed to act automatically.
+    We make use of dht11 sensor and soil moisture sensor which play a vital role in nursery monitoring system,it is programmed to get the readings according to changes in nursery.
+    It alerts the owner or certain person in nursery about the changes in nursery environment.
+
+    The Arduino ide which is a cheap, flexible, fully customizable and programmable small computer board brings the advantages of a PC to the domain of sensor network. In our system we are measuring Nursery environment ( temperature,moisture value )
+    with different available sensors. These sensor’s collected data i.e. biometric information is given to Arduino ide and then it is transferred to server.</p>
+
+  <hr class="line" />
+  <h3 class="project">Block Diagram</h3>
+  <img class="image" src="nursery\block_diagram.JPG" alt="block-diagram" />
+  <hr class="line" />
+  <h2 class="project">Methodology </h2>
+  <p>
+    In this project we have temperature and soil moisture content readings of the patient which are monitored using arduino ide. These sensors signals are send to Arduino IDE via amplifier circuit and signal conditioning unit (scu), because the
+    signals
+    level are low (gain), so amplifier circuit is used to gain up the signal and transmit the signals to the Arduino IDE. Arduino IDE is a Linux based operating system works as a small pc processor system. Here temperature and soil moisture value is
+    measured using respective sensors and it can be monitored in the screen of mobile using Arduino IDE as well as monitoring through anywhere in the world using internet source.
+    The proposed method of nursery monitoring system monitors temperature and moisture parameters using Arduino IDE. After connecting internet to the Arduino IDE it acts as a 3can monitor the patient’s health status anywhere in the world using
+    laptops,
+    tablets and smart phones. If these parameters goes abnormal it will automatically sends alert SMS to the doctors and relatives.</p>
+  <hr class="line" />
+
+  <h3 class="project">Hardware requirements:</h3>
+  <ul class="trainings">
+    <li>
+      Aurduino IDE
+    </li>
+    <li>
+      DHT sensor
+    </li>
+    <li>
+      Soil moisture Sensor
+    </li>
+    <li>
+      Node mcu
+    </li>
+  </ul>
+  <br />
+  <h3 class="project">Software requirements :</h3>
+  <ul class="trainings">
+    <li>
+      Adafruit IO
+    </li>
+    <li>
+      IFTTT
+    </li>
+  </ul>
+  <hr class="line" />
+  <h2 class="project">ARDUINO IDE</h2>
+  <p>
+    <img class="image" src="nursery\1200px-Arduino_IDE_-_Blink_download.JPG" alt="arduino-IDE" />
+    Arduino IDE is an open source software that is mainly used for writing and compiling the code into the Arduino Module. It is an official Arduino software, making code compilation too easy that even a common person with no prior technical
+    knowledge can get their feet wet with the learning process. It is easily available for operating systems like MAC, Windows, and Linux and runs on the Java Platform that comes with inbuilt functions and commands that play a vital role for
+    debugging,
+    editing and compiling the code in the environment.
+    A range of Arduino modules available including Arduino Uno, Arduino Mega, Arduino Leonardo, Arduino Micro and many more. Each of them contains a microcontroller on the board that is actually programmed and accepts the information in the form of
+    code. The main code, also known as a sketch, created on the IDE platform will ultimately generate a Hex File which is then transferred and uploaded in the controller on the board.</p>
+  <hr class="line" />
+  <h2 class="project">DHT SENSOR</h2>
+  <img class="image" src="nursery\dht-11-temperature-humidity-sensor-module-500x500.JPG" alt="DHT11" />
+  <ol class="trainings">
+    <li>
+      DHT11 Specifications:
+    </li>
+    <ul>
+      <li>
+        Operating Voltage: 3.5V to 5.5v.
+      </li>
+      <li>
+        Operating current: 0.3mA (measuring) 60uA (standby)
+      </li>
+      <li>
+        Output: Serial data.
+      </li>
+      <li>
+        Temperature Range: 0°C to 50°C.
+      </li>
+      <li>
+        Humidity Range: 20% to 90%
+      </li>
+      <li>
+        Resolution: Temperature and Humidity both are 16-bit.
+      </li>
+    </ul>
+    <br />
+    <h4 class="project">Pin Configuration</h4>
+    <table border=2px>
+      <tr>
+        <th>
+          Pin Number
+        </th>
+        <th>
+          Pin Name
+        </th>
+        <th>
+          Wire Colour
+        </th>
+        <th>
+          Description
+        </th>
+      </tr>
+      <tr>
+        <td>
+          1.
+        </td>
+        <td>
+          Ground
+        </td>
+        <td>
+          Black
+        </td>
+        <td>
+          Connected to the ground of the system.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          2.
+        </td>
+        <td>
+          Vcc
+        </td>
+        <td>
+          Red
+        </td>
+        <td>
+          Connect to +5V or +3.3V supply voltage
+        </td>
+      </tr>
+      <tr>
+        <td>
+          3.
+        </td>
+        <td>
+          Signal
+        </td>
+        <td>
+          Purple
+        </td>
+        <td>
+          Pulsating output signal.
+        </td>
+      </tr>
+    </table>
+    <br />
+    <ul>
+      <li>
+        Ground Black Connected to the ground of the system
+      </li>
+      <li>
+        Vcc Red Connect to +5V or +3.3V supply voltage
+      </li>
+      <li>
+        Signal Purple Pulsating output signal.
+      </li>
+    </ul>
+  </ol>  
+  <hr class="line" />
+  <h3 class="project">How Dht sensor works ? </h3>
+  <p>
+    DHT11 is a low-cost digital sensor for sensing temperature and humidity.  This sensor can be easily interfaced with any micro-controller such as Arduino, Raspberry Pi etc… to measure humidity and temperature instantaneously.
+    DHT11 humidity and temperature sensor is available as a sensor and as a module. The difference between this sensor and module is the pull-up resistor and a power-on LED. DHT11 is a relative humidity sensor.  To measure the surrounding air this
+    sensor uses a thermistor and a capacitive humidity sensor.
+    DHT11 sensor consists of a capacitive humidity sensing element and a thermistor for sensing temperature.  The humidity sensing capacitor has two electrodes with a moisture holding substrate as a dielectric between them. Change in the capacitance
+    value occurs with the change in humidity levels. The IC measure, process this changed resistance values and change them into digital form.
+    For measuring temperature this sensor uses a Negative Temperature coefficient thermistor, whi n for the smallest change in temperature, this sensor is usually made up of semiconductor ceramics or polymers.</p>
+  <br />
+  <h3 class="trainings">Connecting NodeMCU to Arduino</h3>
+  <br />
+  <ul class="trainings">
+    <li>
+      Pin1 Of DHT11 goes into +3v of NodeMCU
+    </li>
+    <li>
+      Pin2 Of DHT11 goes into Digital pin D4 of NodeMCU
+    </li>
+    <li>
+      Pin3 Of DHT11 goes into Ground Pin (GND) of NodeMCU
+    </li>
+  </ul>
+  <br />
+  <h3 class="trainings">Applications of NodeMCU</p></h3>
+  <br />
+  <ul>
+    <li class="trainings">
+      Nursery monitoring system
+    </li>
+    <li class="trainings">
+      Temperature monitoring in surrounding.
+    </li>
+    <li class="trainings">
+      Can be used in home automation like turning on fan automatically.
+    </li>
+  </ul>
+  <hr class="line" />
+  <h2 class="project">SOIL MOISTURE SENSOR</h2>
+  <img class="image" src="nursery\soil-moisture-sensor-500x500.JPG" alt="soil-moisture sensor" />
+  <p>
+    Soil moisture sensors measure the volumetric water content in soil.Since the direct gravimetric measurement of free soil moisture requires removing, drying, and weighing of a sample, soil moisture sensors measure the volumetric water content
+    indirectly by using some other property of the soil, such as electrical resistance, dielectric constant, or interaction with neutrons, as a proxy for the moisture content.
+    The relation between the measured property and soil moisture must be calibrated and may vary depending on environmental factors such as soil type, temperature, or electric conductivity. Reflected microwave radiation is affected by the soil
+    moisture
+    and is used for remote sensing in hydrology and agriculture. Portable probe instruments can be used by farmers or gardeners.
+    Soil moisture sensors typically refer to sensors that estimate volumetric water content. Another class of sensors measure another property of moisture in soils called water potential; these sensors are usually referred to as soil water potential
+    sensors and include tensiometers and gypsum blocks.<br />
+    <br />
+    How it Works?<br />
+    This sensor mainly utilizes capacitance to gauge the water content of the soil (dielectric permittivity). The working of this sensor can be done by inserting this sensor into the earth and the status of the water content in the soil can be
+    reported
+    in the form of a percent.</p>
+  <hr class="line" />
+  <h3 class="project">Connections To NodeMCU</h3>
+  <ul class="trainings">
+    <li>
+      VCC pin is used for power
+    </li>
+    <li>
+      A0 pin is an analog output
+    </li>
+    <li>
+      D0 pin is a digital output
+    </li>
+    <li>
+      GND pin is a Ground
+    </li>
+  </ul>
+  <hr class="line" />
+  <h2 class="project">Specifications</h2>
+  <ul class="trainings">
+    <li>
+      The required voltage for working is 5V
+    </li>
+    <li>
+      The required current for working is lessthan 20mA
+    </li>
+    <li>
+      Type of interface is analog </li>
+    <li>
+      The required working temperature of this sensor is 10°C~30°C</li>
+  </ul>
+  <hr class="line" />
+  <h2 class="project">CONCLUSION</h2>
+  <p>
+    As Agricultural sector is important part of our society, automating these services lessen the burden on humans and eases the measuring process. Also the transparency of this system helps farmers to trust it. When threshold value is
+    reached, the alarm system that consists of buzzer and LED alerts the person and he can act more quickly o. The objective of developing monitoring systems is to reduce labour cost and helps in getting proper growth at younger age with all
+    required
+    nourishment’s. The GSM technology helps the server to update the plant on website. Many further improvements can be made in our system to make it better and easily adaptable such as adding more advanced sensors.the temperature and soil moisture
+    is read and updated to ADAFRUIT, it is the online server which is connected to IFTTT and also ADAFRUIT is also used to monitor the changes on the server. IFTTT sends the alert to the certain person through SMS,EMAIL etc.. about the changes in
+    environment . We can make use of Google Assistant to give the command to control the FAN and MOTOR. this results in effective measure of the environmental changes and we can overcome that problems even being away from the nursery.</p>
+
+  <hr class="line" />
+  <h3 class="project"> FUTURE SCOPE</h3>
+  <p>
+    According to the availability of sensors or development in Agricultural trend more parameter can be sensed and monitored which will drastically improve the efficiency of the wireless monitoring system in this field. A graphical LCD can be used
+    to display a graph of rate of change of parameters over time. The whole Nursery monitoring system which we have framed can be integrated into a small compact unit as small as a cell phone or a wrist watch. This will help us to place this in
+    nursery as it don’t require more space.</p>
+  <hr class="line" />
+  <h3 class="trainings"> CODE</h3>
+<br />
+    &nbsp    #include < ESP8266WiFi . h><br />
+      &nbsp    #include "Adafruit_MQTT.h"<br />
+      &nbsp #include "Adafruit_MQTT_Client.h"<br />
+      &nbsp #include "DHT.h"<br />
+      &nbsp /************************* WiFi Access Point *********************************/<br />
+      &nbsp #define DHTPIN D4<br />
+      &nbsp #define DHTTYPE DHT11<br />
+    &nbsp  #define WLAN_SSID "Bhavana"<br />
+      &nbsp #define WLAN_PASS "1234567890"<br />
+      &nbsp <br />
+      &nbsp /************************* Adafruit.io Setup *********************************/<br />
+      &nbsp <br />
+      &nbsp #define AIO_SERVER "io.adafruit.com"<br />
+      &nbsp #define AIO_SERVERPORT 1883 // use 8883 for SSL<br />
+    &nbsp   #define AIO_USERNAME "BHAVANA A"<br />
+    &nbsp   #define AIO_KEY "aio_VLIQ425lW2saOAPOGnAI6ZvGPkJz"<br />
+    &nbsp   DHT dht(DHTPIN,DHTTYPE);<br />
+    &nbsp   int sensorpin=A0;<br />
+    &nbsp  int sensorvalue;<br />
+    &nbsp   /************ Global State (you don't need to change this!) ******************/<br />
+     <br />
+&nbsp
+    &nbsp    WiFiClient client;<br />
+      <br />
+
+    &nbsp   Adafruit_MQTT_Client mqtt(& client, AIO_SERVER, AIO_SERVERPORT, AIO_USERNAME, AIO_KEY);<br />
+    &nbsp   <br />
+    &nbsp   /****************************** Feeds ***************************************/<br />
+    &nbsp   <br />
+
+    &nbsp   Adafruit_MQTT_Publish temperature = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/temperature");<br />
+    &nbsp   Adafruit_MQTT_Publish humidity= Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/humidity");<br />
+      <br />
+    &nbsp  Adafruit_MQTT_Publish moisture= Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/Mois");<br />
+    &nbsp  Adafruit_MQTT_Publish mswitch= Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/MSWITCH");<br />
+    &nbsp  Adafruit_MQTT_Publish tswitch= Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/TSWITCH");<br />
+    &nbsp   <br  />
+    &nbsp   //float temperature=0;<br />
+    &nbsp   //float humidity=0;<br />
+    &nbsp   <br />
+    &nbsp   // Setup a feed called 'onoff' for subscribing to changes.<br />
+    &nbsp   Adafruit_MQTT_Subscribe FAN = Adafruit_MQTT_Subscribe(&mqtt, AIO_USERNAME "/feeds/FAN");<br />
+    &nbsp   Adafruit_MQTT_Subscribe MOTOR = Adafruit_MQTT_Subscribe(&mqtt, AIO_USERNAME "/feeds/MOTOR");<br />
+    &nbsp   <br />
+    &nbsp   /*************************** Sketch Code ************************************/<br />
+    &nbsp   <br />
+    &nbsp   // Bug workaround for Arduino 1.6.6, it seems to need a function declaration<br />
+    &nbsp   // for some reason (only affects ESP8266, likely an arduino-builder bug).<br />
+    &nbsp   void MQTT_connect();<br />
+    &nbsp   <br />
+    &nbsp   void setup() {<br />
+    &nbsp   Serial.begin(115200);<br />
+    &nbsp   delay(10);<br />
+    &nbsp   dht.begin();<br />
+    &nbsp   <br />
+    &nbsp   Serial.println(F("Adafruit MQTT demo"));<br />
+    &nbsp   <br />
+    &nbsp   // Connect to WiFi access point.<br />
+    &nbsp   Serial.println(); Serial.println();<br />
+    &nbsp   Serial.print("Connecting to ");<br />
+    &nbsp   Serial.println(WLAN_SSID);<br />
+    &nbsp   <br />
+    &nbsp   WiFi.begin(WLAN_SSID, WLAN_PASS);<br />
+    &nbsp   while (WiFi.status() != WL_CONNECTED) {<br />
+    &nbsp   delay(500);<br />
+    &nbsp   Serial.print("not connected");<br />
+    &nbsp   }<br />
+    &nbsp   Serial.println();<br />
+    &nbsp   <br />
+    &nbsp   Serial.println("WiFi connected");<br />
+    &nbsp   Serial.println("IP address: "); Serial.println(WiFi.localIP());<br />
+    &nbsp   <br />
+    &nbsp   // Setup MQTT subscription for onoff feed.<br />
+    &nbsp  mqtt.subscribe(&FAN);<br />
+    &nbsp  mqtt.subscribe(&MOTOR);<br />
+    &nbsp  <br />
+    &nbsp   }<br />
+    &nbsp   <br />
+    &nbsp   void loop() {<br />
+    &nbsp   char buffer[80];<br />
+    &nbsp   <br />
+    &nbsp   delay(10000);<br />
+    &nbsp   MQTT_connect();<br />
+    &nbsp   Adafruit_MQTT_Subscribe *subscription;<br />
+    &nbsp   while ((subscription = mqtt.readSubscription(5000))) {<br />
+    &nbsp   if (subscription == &FAN) {<br />
+    &nbsp   //Serial.print(F("Got: "));<br />
+    &nbsp   if(strcmp((char *)FAN.lastread,"1")){<br />
+    &nbsp   Serial.println("Fan on");<br />
+    &nbsp   }<br />
+    &nbsp   else{<br />
+    &nbsp   Serial.println("fan Off");<br />
+    &nbsp   }<br />
+    &nbsp   }<br />
+    &nbsp   if (subscription == &MOTOR) {<br />
+    &nbsp   //Serial.print(F("Got: "));<br />
+    &nbsp   if(strcmp((char *)MOTOR.lastread,"1")){<br />
+    &nbsp   Serial.println("motor on");<br />
+    &nbsp   }<br />
+    &nbsp   else{<br />
+    &nbsp  Serial.println("motor off");<br />
+    &nbsp  }<br />
+    &nbsp  }<br />
+    &nbsp   }<br />
+    &nbsp   <br />
+    &nbsp   // Now we can publish stuff!<br />
+    &nbsp   Serial.print(F("temperature value "));<br />
+    &nbsp   Serial.println(dht.readTemperature());<br />
+    &nbsp   //Serial.print("...");<br />
+    &nbsp   if (!temperature.publish(dht.readTemperature())) {<br />
+    &nbsp   Serial.println(F("Failed"));<br />
+    &nbsp   } else {<br />
+    &nbsp   //Serial.println(F("OK!"));<br />
+    &nbsp   }<br />
+    &nbsp   Serial.print(F("humidity value "));<br />
+    &nbsp   Serial.println(dht.readHumidity());<br />
+    &nbsp   //Serial.print("...");<br />
+    &nbsp   if (!humidity.publish(dht.readHumidity())) {<br />
+    &nbsp   Serial.println(F("Failed"));<br />
+    &nbsp   } else {<br />
+    &nbsp   //.println(F("OK!"));<br />
+    &nbsp   }<br />
+    &nbsp   Serial.println(F("moisture value "));<br />
+    &nbsp   Serial.println(analogRead(sensorpin));<br />
+    &nbsp   Serial.println(100-((analogRead(sensorpin)-256)/7.68));<br />
+    &nbsp   //Serial.print("...");<br />
+    &nbsp   if (!moisture.publish(100-((analogRead(sensorpin)-256)/7.68))) {<br />
+    &nbsp   Serial.println(F("Failed"));<br />
+    &nbsp   } else {<br />
+    &nbsp   // Serial.println(F("OK!"));<br />
+    &nbsp   }<br />
+    &nbsp   Serial.println(F("Moisture switch "));<br />
+    &nbsp   //Serial.println(analogRead(sensorpin));<br />
+    &nbsp   //Serial.println(100-((analogRead(sensorpin)-256)/7.68));<br />
+    &nbsp   //Serial.print("...");<br />
+    &nbsp   if (!mswitch.publish((100-((analogRead(sensorpin)-256)/7.68))
+    &nbsp   < 50)) {<br />
+    &nbsp   Serial.println(F("Failed"));<br />
+    &nbsp   } else {<br />
+    &nbsp   //Serial.println(F("OK!"));<br />
+    &nbsp   }<br />
+    &nbsp   Serial.println(F("Temperature switch"));<br />
+    &nbsp   //Serial.println(analogRead(sensorpin));<br />
+    &nbsp   //Serial.println(100-((analogRead(sensorpin)-256)/7.68));<br />
+    &nbsp   Serial.print("...");<br />
+    &nbsp   if (!tswitch.publish(dht.readTemperature()>30)) {<br />
+    &nbsp   Serial.println(F("Failed"));<br />
+    &nbsp   } else {<br />
+    &nbsp   Serial.println(F("OK!"));<br />
+    &nbsp   }<br />
+    &nbsp   <br />
+    &nbsp   }<br />
+    &nbsp   // ping the server to keep the mqtt connection alive<br />
+    &nbsp   // NOT required if you are publishing once every KEEPALIVE seconds<br />
+    &nbsp   <br />
+    &nbsp   void MQTT_connect() {<br />
+    &nbsp   int8_t ret;<br />
+    &nbsp   <br />
+    &nbsp   // Stop if already connected.<br />
+    &nbsp   if (mqtt.connected()) {<br />
+    &nbsp   return;<br />
+    &nbsp   }<br />
+    &nbsp   <br />
+    &nbsp   Serial.print("Connecting to MQTT... ");<br />
+    &nbsp   <br />
+    &nbsp   uint8_t retries = 3;<br />
+    &nbsp   while ((ret = mqtt.connect()) != 0) { // connect will return 0 for connected<br />
+    &nbsp   Serial.println(mqtt.connectErrorString(ret));<br />
+    &nbsp   Serial.println("Retrying MQTT connection in 5 seconds...");<br />
+    &nbsp   mqtt.disconnect();<br />
+    &nbsp   delay(5000); // wait 5 seconds<br />
+    &nbsp   retries--;<br />
+    &nbsp   if (retries == 0) {<br />
+    &nbsp   // basically die and wait for WDT to reset me<br />
+    &nbsp   while (1);<br />
+    &nbsp   }<br />
+    &nbsp   }<br />
+    &nbsp   Serial.println("MQTT Connected!");<br />
+<hr class="line" />
+  <h3 class="project">REFERENCE</h3>
+  <p class="project">
+    Introduction to ArduinoIDE from www.theengineeringprojects.com<br />
+DHT11 Sensor from www.adafruit.com<br />
+Soil moisture sensor from Wikipedia<br />
+  </p>
+</body>
+
+</html>
